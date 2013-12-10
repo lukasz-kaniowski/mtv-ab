@@ -740,6 +740,10 @@ sky.tracking = {
 };
 var s_code = "",
     s_objectID;
+
+window.optimizely = window.optimizely || [];
+window.optimizely.push("activateSiteCatalyst");
+
 if (typeof SKY_TRACKING != "undefined") {
     sky.tracking.launch(SKY_TRACKING)
 }
