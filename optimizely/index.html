@@ -209,7 +209,10 @@
 analytics.trackPage({
     site: 'sky/ab/optimizely',
     section: 'home',
-    account: 'bskybwebpopcorndev'
+    account: 'bskybwebpopcorndev',
+    customVariables: [
+        {'eli': {'prop': 80, 'value': 80, onPageLoad: true}},
+    ],
 });
 
 
