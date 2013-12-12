@@ -200,8 +200,21 @@
     </div>
 
 </div>
-<script type="text/javascript">var SKY_TRACKING = {"section": "home", "site": "sky/ab/optimizely", "browseMethod": "web", "account": "bskybwebpopcorndev", "orderId": "", "events": ""}</script>
-<script type="text/javascript" src="omniture.js"></script>
+<script src=http://analytics.global.sky.com/1.2.1/analytics.js></script>
+<script type="text/javascript">
+
+//var SKY_TRACKING = {"section": "home", "site": "sky/ab/optimizely", "browseMethod": "web", "account": "bskybwebpopcorndev", "orderId": "", "events": ""};
+
+analytics.trackPage({
+    site: 'sky/ab/optimizely',
+    section: 'home',
+    account: 'bskybwebpopcorndev'
+});
+
+
+
+</script>
+<!--<script type="text/javascript" src="omniture.js"></script>-->
 <script type="text/javascript" src="http://web.static.nowtv.com/ice/1.0.2/resources/js/iceberg.libs.bundle.js"></script>
 <script type="text/javascript" src="http://web.static.nowtv.com/ice/1.0.2/resources/js/iceberg.core.bundle.js"></script>
 <script type="text/javascript"

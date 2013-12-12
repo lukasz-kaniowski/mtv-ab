@@ -96,6 +96,7 @@ sky.tracking = {
         ageGender: ["eVar12"],
         skyPackage: ["eVar16"],
         newRepeat: ["prop70", "eVar70"],
+        optimizely: ["prop80"],
         getVisitNo: ["prop69", "eVar69"],
         contentID: ["eVar21"],
         customerType: ["eVar23"],
@@ -202,6 +203,14 @@ sky.tracking = {
         if (a.errors) {
             a.errors = a.errors.toLowerCase()
         }
+
+        if(SKY_TRACKING.optimizely) {
+            if(SKY_TRACKING.optimizely.eVar50) {
+                b.eVar50 = SKY_TRACKING.optimizely.eVar50;
+            }
+
+        }
+
         if (a.section.indexOf("/") == 0) {
             a.section = a.section.substring(1)
         }
@@ -276,6 +285,17 @@ sky.tracking = {
         var n = s_gi(b.account);
         this.loadPlugins(n);
         window.s_bskyb = this.s = n;
+
+        if(SKY_TRACKING.optimizely.prop80) {
+            console.log('flying badgers of death', SKY_TRACKING.optimizely);
+
+            n.prop80 = SKY_TRACKING.optimizely.prop80;
+//            b.eVar80 = "D=c80"
+
+            console.log('la b', b);
+            console.log('la n', n);
+        }
+
         if (n.getNewRepeat(365) == "Repeat") {
             c.push("event20")
         }
@@ -521,6 +541,7 @@ sky.tracking = {
                 n.eVar69 = "D=c69"
             }
             if (b.track) {
+                console.log('tracking mctrackersons', b.track, n.t);
                 n.t()
             }
         }
@@ -742,7 +763,8 @@ var s_code = "",
     s_objectID;
 
 window.optimizely = window.optimizely || [];
-window.optimizely.push("activateSiteCatalyst");
+SKY_TRACKING.optimizely = { eVar50: 'chris', prop80: 'łukasz' };
+window.optimizely.push(['activateSiteCatalyst', {"sVariable": SKY_TRACKING.optimizely }]);
 
 if (typeof SKY_TRACKING != "undefined") {
     sky.tracking.launch(SKY_TRACKING)
