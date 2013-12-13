@@ -206,7 +206,7 @@
 
 window.OMNITURE = {}
 window.optimizely = window.optimizely || [];
-window.optimizely.push('activateSiteCatalyst', window.OMNITURE)
+window.optimizely.push(['activateSiteCatalyst', {"sVariable": window.OMNITURE}]);
 
 analytics.trackPage({
     page:document.title,
@@ -214,8 +214,8 @@ analytics.trackPage({
     section:'home',
     account:'bskybwebpopcorndev',
     customVariables:[
-        {'optimizely':{ eVar:73, value:window.OMNITURE.eVar73, onPageLoad:true }},
-        {'bryansCat':{ prop:66, value:window.OMNITURE.prop66, onPageLoad:true }}
+        {'optimizely':{ eVar:73, value: window.OMNITURE.eVar73, onPageLoad:true }},
+        {'bryansCat':{ prop:66, value: window.OMNITURE.prop66, onPageLoad:true }}
     ]
 });
 
