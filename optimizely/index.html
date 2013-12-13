@@ -200,22 +200,24 @@
     </div>
 
 </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src=http://analytics.global.sky.com/1.2.1/analytics.js></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://analytics.global.sky.com/1.2.1/analytics.js"></script>
 <script type="text/javascript">
 
-//var SKY_TRACKING = {"section": "home", "site": "sky/ab/optimizely", "browseMethod": "web", "account": "bskybwebpopcorndev", "orderId": "", "events": ""};
+window.OMNITURE = {}
+window.optimizely = window.optimizely || [];
+window.optimizely.push('activateSiteCatalyst', window.OMNITURE)
 
 analytics.trackPage({
-    site: 'sky/ab/optimizely',
-    section: 'home',
-    account: 'bskybwebpopcorndev',
-    customVariables: [
-        {'eli': {'evar': 80, 'value': 'nunchuk'}},
-    ],
+    page:document.title,
+    site:'sky/ab/optimizely',
+    section:'home',
+    account:'bskybwebpopcorndev',
+    customVariables:[
+        {'optimizely':{ eVar:73, value:window.OMNITURE.eVar73, onPageLoad:true }},
+        {'bryansCat':{ prop:66, value:window.OMNITURE.prop66, onPageLoad:true }}
+    ]
 });
-
-
 
 </script>
 <!--<script type="text/javascript" src="omniture.js"></script>-->
