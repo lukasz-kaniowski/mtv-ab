@@ -75,8 +75,26 @@
         </p>
     </section>
 </div>
-<script type="text/javascript">var SKY_TRACKING = {"section": "confirm", "site": "sky/ab/optimizely", "browseMethod": "web", "account": "bskybwebpopcorndev", "orderId": "", "events": ""}</script>
-<script type="text/javascript" src="omniture.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://analytics.global.sky.com/1.2.1/analytics.js"></script>
+<script type="text/javascript">
+
+    window.OMNITURE = {}
+    window.optimizely = window.optimizely || [];
+    window.optimizely.push(['activateSiteCatalyst', {"sVariable": window.OMNITURE}]);
+
+    analytics.trackPage({
+        page:document.title,
+        site:'sky/ab/optimizely',
+        section:'confirm',
+        account:'bskybwebpopcorndev',
+        customVariables:[
+            {'optimizely':{ eVar:73, value: window.OMNITURE.eVar73, onPageLoad:true }},
+            {'bryansCat':{ prop:66, value: window.OMNITURE.prop66, onPageLoad:true }}
+        ]
+    });
+
+</script>
 <script type="text/javascript" src="http://web.static.nowtv.com/ice/layout/badger/defer.js"></script>
 <script type="text/javascript" src="http://web.static.nowtv.com/ice/1.0.2/resources/js/iceberg.core.bundle.js"></script>
 <script type="text/javascript" src="//www.nowtv.com/resources/promo-hero.js"></script>
