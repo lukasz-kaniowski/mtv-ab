@@ -1,7 +1,11 @@
 var segmentation = {
     isXboxUser:function () {
-        console.log('is xbox user');
+        console.log('is xbox user return true');
         return true;
+    },
+    isPs4User:function () {
+        console.log('is ps4 user return false');
+        return false;
     }
 };
 
