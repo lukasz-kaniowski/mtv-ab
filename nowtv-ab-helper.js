@@ -12,6 +12,10 @@ var segmentation = {
 var experience = {
     setNoCrossSellPage:function () {
         console.log('no cross sell page');
+    },
+    hidePromo: function() {
+        console.log('hidding promo section');
+        $('.promo').hide();
     }
 };
 
