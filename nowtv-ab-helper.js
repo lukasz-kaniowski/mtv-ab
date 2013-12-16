@@ -15,7 +15,7 @@ var experience = {
     },
     hidePromo: function() {
         console.log('hidding promo section');
-        $('.promo').hide();
+        $('.promo').css({"display":"none", "visibility":""});
     }
 };
 
